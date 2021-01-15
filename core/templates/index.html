@@ -1,0 +1,21 @@
+{% extends 'base_.html' %}
+
+    {% block content %}
+        <h5 class="display-5 d-none d-sm-block">{{ request.user }}</h5>
+
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <th scope="row">ФИО:</th>
+              <td>{{ student.fio }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Группа:</th>
+              <td>{{ student.group }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+{#        <h2>Это главная страница</h2>#}
+    {% endblock content %}
+

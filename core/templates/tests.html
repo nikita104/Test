@@ -1,0 +1,29 @@
+{% extends 'base_.html' %}
+
+    {% block content %}
+      <p class="lead mt-2">Доступные тесты для прохождения</p>
+
+      <table class="table table-hover">
+      <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Тест</th>
+              <th scope="col">Дисциплина</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for test in tests %}
+                <tr>
+                  <th scope="row"><a href="{% url 'test_student' test.id %}">{{ test.id }}</a></th>
+                  <td>{{ test.name }}</td>
+                  <td>{{ test.discipline }}</td>
+                </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+    {% endblock content %}
+

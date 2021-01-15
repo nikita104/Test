@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+
+        {% load static %}
+        {% load bootstrap4 %}
+
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+
+        <meta charset="UTF-8">
+{#        <script src="{%  static 'js/jquery.min.js' %}" type="text/javascript"></script>#}
+
+        {% block header %}
+        {% endblock header %}
+
+        {% block title %}
+            <title>
+                {% if title %}{{ title }} - {% endif %}
+            </title>
+        {% endblock title %}
+
+        {{ form.media }}
+        {{ formset.media }}
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('select').addClass('form-control input-sm');
+                $('textarea').addClass('form-control input-sm');
+                $('input[type="text"]').addClass('form-control input-sm');
+                $('input[type="password"]').addClass('form-control input-sm');
+            });
+        </script>
+
+    </head>
+    <body>
+        {% block body %}
+
+
+            {% block menu %}
+                {% include 'menu.html' %}
+            {% endblock menu %}
+
+
+
+{#            <div class="breadcrumbs">#}
+{#                {% block breadcrumbs %}#}
+{#                <ol class="breadcrumb">#}
+{#                  {% for label, url in breadcrumbs %}#}
+{#                      {% if not forloop.last %}#}
+{#                          <li><a href="{{ url }}">{{ label }}</a></li>#}
+{#                      {% else %}#}
+{#                          <li class="active">{{ label }}</li>#}
+{#                      {% endif %}#}
+{#                  {% endfor %}#}
+{#                </ol>#}
+{#                {% endblock %}#}
+{#            </div>#}
+
+{#            {% block messages %}#}
+{#                {% if messages %}#}
+{#                    <ul class="alert alert-warning">#}
+{#                    {% for message in messages %}#}
+{#                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>#}
+{#                            {{ message }}#}
+{#                        </li>#}
+{#                    {% endfor %}#}
+{#                    </ul>#}
+{#                {% endif %}#}
+{#            {% endblock messages %}#}
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                        <div class="sidebar-sticky">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="test_student/1/">Тесты</a>
+                                  </li>
+                                <li class="nav-item">
+                                   <a class="nav-link active">KXKLX</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </nav>
+
+{#                    <div class="row">#}
+{#                        <div class="col-md-12">#}
+{#                            <div class="base">#}
+{#                                {% block content %}#}
+{#                                {% endblock content %}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+            </div>
+        {% endblock body %}
+
+        {% block footer %}
+        {% endblock footer %}
+    </body>
+</html>

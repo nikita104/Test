@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+        Bootstrap 4 Dashboard
+    </title>
+    <meta name="description" content="A Bootstrap 4 admin dashboard theme that will get you started. The sidebar toggles off-canvas on smaller screens. This example also include large stat blocks, modal and cards. The top navbar is controlled by a separate hamburger toggle button." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+
+    {% load static %}
+    {% load bootstrap4 %}
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+    {% bootstrap_messages %}
+
+  </head>
+  <body >
+
+    {% block top_menu %}
+        {% include 'top_menu.html' %}
+    {% endblock top_menu %}
+
+
+
+
+    <div class="container-fluid" id="main">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            {% block left_menu %}
+                {% include 'left_menu.html' %}
+            {% endblock left_menu %}
+
+
+            <div class="col main pt-5 mt-3">
+
+
+                {% block content %}
+                {% endblock content %}
+
+
+                <a id="features"></a>
+                <hr>
+{#                <p class="lead mt-5">#}
+{#                    Are you ready for Bootstap 4? It's the 4th generation of this popular responsive framework. Bootstrap 4 will include some interesting#}
+{#                    new features such as flexbox, 5 grid sizes (now including xl), cards, `em` sizing, CSS normalization (reboot) and larger font#}
+{#                    sizes.#}
+{#                </p>#}
+
+    {#            {% include 'main.html' %}#}
+
+{#                <a id="layouts"></a>#}
+{#                <hr>#}
+        </div>
+    </div>
+
+</div>
+<footer class="container-fluid">
+    <p class="text-right small">©2021 Company</p>
+</footer>
+
+
+
+  </body>
+</html>
