@@ -9,8 +9,9 @@ from django.views.generic import TemplateView
 from lib.generic_mixin import BreadcrumbsMixin
 
 
+
 class Index(BreadcrumbsMixin, TemplateView):
-    template_name = 'index.html'
+    template_name = 'index.hhttps://github.com/nikita104/Test.gittml'
 
     def get_breadcrumbs(self):
         return [
